@@ -33,5 +33,6 @@ func (listener *UpstreamListener) OnOpen(c gnet.Conn) (out []byte, action gnet.A
 
 func (listener *UpstreamListener) OnBoot(eng gnet.Engine) gnet.Action {
 	listener.eng = eng
+	print("Launched")
 	return gnet.None
 }

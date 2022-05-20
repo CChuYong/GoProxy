@@ -7,9 +7,12 @@ import (
 type UpstreamBridge struct {
 	Bridge
 	sourceConn net.Conn
+	backend    *DownstreamBridge
 }
 
 func (usb *UpstreamBridge) init() {
+	dsb := NewDownstreamBridge(usb)
+	usb.backend = dsb
 
 }
 
